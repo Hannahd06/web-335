@@ -24,4 +24,7 @@ db.users.find( {"email": "mozart@me.com"} );
 db.users.aggregate([{$match: {"email": "mozart@me.com"}}]);
 
 // Query to list all documents in the users collection for only firstName, lastName, and email
-db.users.find({}, {"firstName": 1, "lastName": 1, "email": 1, "_id": 0}); 
+db.users.find({}, {"firstName": 1, "lastName": 1, "email": 1, "_id": 0});
+
+// Alternative query to list all documents in the users collection for only firstName, lastName, and email
+db.users.aggregate({$project: {"_id": 0, "firstName": 1, "lastName": 1, "email": 1}});
