@@ -14,18 +14,24 @@ print(client)
 # Assign web335 database to variable db
 db = client['web335DB']
 
-print("Listing of all users in the web335 collection")
+# Create space between outputs
+print()
 
 # Call the find function to display all users in the collection, displaying only firstName and LastName
+print("Listing of all users in the web335 collection")
 for user in db.users.find({}, {"firstName": 1, "lastName": 1}):
     print(user)
 
-print("Displaying information for employeeId: 1011")
+# Create space between outputs
+print()
 
 # Call the find_one function to display a document with employeeId: 1011
+print("Displaying information for employeeId: 1011")
 print(db.users.find_one({"employeeId": "1011"}))
 
-print("Displaying information for lastName: Mozart")
+# Create space between outputs
+print()
 
 # Call the find_one function to display a document with the lastName Mozart
+print("Displaying information for lastName: Mozart")
 print(db.users.find_one({"lastName": "Mozart"}))
