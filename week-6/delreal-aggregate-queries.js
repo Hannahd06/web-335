@@ -27,7 +27,7 @@ db.students.find({"firstName": "Remus"});
 db.houses.aggregate([{$lookup: {from: "students", localField: "houseId", foreignField: "houseId", as: "students"}}]);
 
 // Query to show a list of students for house Gryffindor
-db.houses.aggregate([{$match: {"founder": "Godric Gryffindor"}}, {$lookup: {from: "students", localField: "houseId", foreignField: "houseId", as: "students"}}]);
+db.houses.aggregate([{$lookup: {from: "students", localField: "houseId", foreignField: "houseId", as: "students"}}, {$match: {"founder": "Godric Gryffindor"}}]);
 
 // Query to show a list of students for Eagle Mascot
 db.houses.aggregate([{$match: {"mascot": "Eagle"}}, {$lookup: {from: "students", localField: "houseId", foreignField: "houseId", as: "students"}}]);
