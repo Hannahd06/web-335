@@ -58,4 +58,4 @@ print(result)
 
 
 # Create a query to verify that document has been deleted
-print(db.users.find_one({"employeeId": "1014"}))
+print(db.users.find_one({"firstName": "Claudio"}))
